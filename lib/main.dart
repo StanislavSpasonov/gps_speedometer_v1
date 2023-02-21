@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:provider/provider.dart';
+import 'package:speedometer/generated/l10n.dart';
+import 'package:speedometer/scr/core/locale_locale_change_notifier/locale_change_notifier.dart';
 import 'package:speedometer/scr/core/theme_ext/theme_ext.dart';
 import 'package:speedometer/scr/future/speedometer_page/speedometer_page.dart';
 
@@ -11,13 +15,28 @@ class SpeedometerApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: Theme.of(context).copyWith(
-        extensions: <ThemeExtension<dynamic>>[
-          AppTheme(),
-        ],
-      ),
-      home: const SpeedometerPage(),
+    return ChangeNotifierProvider(
+      create: (BuildContext context) {
+        return LocaleChangeNotifier();
+      },
+      child: Builder(builder: (context) {
+        return MaterialApp(
+          localizationsDelegates: const [
+            S.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          locale: context.watch<LocaleChangeNotifier>().getLocale,
+          supportedLocales: S.delegate.supportedLocales,
+          theme: Theme.of(context).copyWith(
+            extensions: <ThemeExtension<dynamic>>[
+              AppTheme(),
+            ],
+          ),
+          home: const SpeedometerPage(),
+        );
+      }),
     );
   }
 }

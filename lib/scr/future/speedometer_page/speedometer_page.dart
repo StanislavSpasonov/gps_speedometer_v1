@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:intl/intl.dart';
 import 'package:speedometer/scr/core/theme_ext/theme_ext.dart';
 import 'package:speedometer/scr/core/widgets/appbar_speedometr.dart';
 import 'package:speedometer/scr/core/widgets/base_less_widget.dart';
@@ -67,7 +68,7 @@ class SpeedometerPage extends BaseStatelessWidget {
                 SmallBlackButton(
                   title: 'Reset',
                   onPress: () {
-                    print('on Press reste');
+                    //todo add reset
                   },
                 ),
                 const SizedBox(
@@ -76,12 +77,15 @@ class SpeedometerPage extends BaseStatelessWidget {
                 SmallWhiteButton(
                   title: 'HUD',
                   onPress: () {
-                    print('press HUD');
+                    //todo add HUD Page
                   },
                 ),
               ],
             ),
-
+            Text(
+              Intl.getCurrentLocale(),
+              style: appTheme?.fonts.aldrich17,
+            ),
           ],
         ),
       ),
