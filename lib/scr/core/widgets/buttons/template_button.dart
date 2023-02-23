@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:speedometer/generated/l10n.dart';
 import 'package:speedometer/scr/core/theme_ext/theme_ext.dart';
 import 'package:speedometer/scr/core/widgets/base_less_widget.dart';
 
@@ -23,28 +24,25 @@ class TemplateButton extends BaseStatelessWidget {
   final Color? borderColor;
 
   @override
-  Widget buildWidget(BuildContext context, AppTheme? appTheme) {
-    return Expanded(
-      child: GestureDetector(
-        onTap: onPress,
-        child: Container(
-          padding: const EdgeInsets.symmetric(vertical: _verticalButtonPadding),
-          width: double.infinity,
-          height: height ?? _defaultHeight,
-          decoration: BoxDecoration(
-            border:
-                borderColor != null ? Border.all(color: borderColor!) : null,
-            borderRadius:
-                BorderRadius.circular(appTheme?.borderRadius.main ?? 0),
-            color: backgroundColor ?? appTheme?.colors.white ?? Colors.white,
-          ),
-          child: Center(
-            child: Text(
-              title,
-              style: textStyle ??
-                  appTheme?.fonts.aldrich15
-                      .copyWith(color: appTheme.colors.black),
-            ),
+  Widget buildWidget(
+      BuildContext context, AppTheme? appTheme, S appLocalization) {
+    return GestureDetector(
+      onTap: onPress,
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: _verticalButtonPadding),
+        width: double.infinity,
+        height: height ?? _defaultHeight,
+        decoration: BoxDecoration(
+          border: borderColor != null ? Border.all(color: borderColor!) : null,
+          borderRadius: BorderRadius.circular(appTheme?.borderRadius.main ?? 0),
+          color: backgroundColor ?? appTheme?.colors.white ?? Colors.white,
+        ),
+        child: Center(
+          child: Text(
+            title,
+            style: textStyle ??
+                appTheme?.fonts.aldrich15
+                    .copyWith(color: appTheme.colors.black),
           ),
         ),
       ),

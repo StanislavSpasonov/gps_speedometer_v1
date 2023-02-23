@@ -9,7 +9,16 @@ enum LocaleEnum {
       case LocaleEnum.ru:
         return const Locale('ru', 'RU');
       default:
-        return const Locale('un');
+        return const Locale('en');
+    }
+  }
+
+  String getLocaleTitle() {
+    switch (this) {
+      case LocaleEnum.ru:
+        return 'russian';
+      default:
+        return 'english';
     }
   }
 }

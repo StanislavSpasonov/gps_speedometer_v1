@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:speedometer/generated/l10n.dart';
 import 'package:speedometer/scr/core/theme_ext/theme_ext.dart';
 import 'package:speedometer/scr/core/widgets/base_less_widget.dart';
 import 'package:speedometer/scr/core/widgets/buttons/template_button.dart';
@@ -18,7 +19,8 @@ class SmallBlackButton extends BaseStatelessWidget {
   final double? height;
 
   @override
-  Widget buildWidget(BuildContext context, AppTheme? appTheme) {
+  Widget buildWidget(
+      BuildContext context, AppTheme? appTheme, S appLocalization) {
     return TemplateButton(
       onPress: onPress,
       title: title,
