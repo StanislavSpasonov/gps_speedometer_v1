@@ -6,8 +6,8 @@ import 'package:speedometer/scr/core/widgets/appbar_speedometr.dart';
 import 'package:speedometer/scr/core/widgets/base_less_widget.dart';
 import 'package:speedometer/scr/core/widgets/buttons/small_black_button.dart';
 import 'package:speedometer/scr/core/widgets/buttons/small_white_button.dart';
-import 'package:speedometer/scr/future/language_page/language_page.dart';
-import 'package:speedometer/scr/future/speedometer_page/widgets/column_element.dart';
+import 'package:speedometer/scr/feature/language_page/language_page.dart';
+import 'package:speedometer/scr/feature/speedometer_page/widgets/column_element.dart';
 
 class SpeedometerPage extends BaseStatelessWidget {
   const SpeedometerPage({Key? key}) : super(key: key);

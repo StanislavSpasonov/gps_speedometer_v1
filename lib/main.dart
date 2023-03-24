@@ -3,8 +3,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:speedometer/generated/l10n.dart';
 import 'package:speedometer/scr/core/theme_ext/theme_ext.dart';
-import 'package:speedometer/scr/future/language_page/domain/locale_locale_change_notifier/locale_change_notifier.dart';
-import 'package:speedometer/scr/future/speedometer_page/speedometer_page.dart';
+import 'package:speedometer/scr/feature/language_page/domain/locale_locale_change_notifier/locale_change_notifier.dart';
+import 'package:speedometer/scr/feature/speedometer_page/speedometer_page.dart';
 
 void main() {
   runApp(const SpeedometerApp());
