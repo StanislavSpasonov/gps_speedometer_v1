@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:speedometer/generated/l10n.dart';
 import 'package:speedometer/scr/core/theme_ext/theme_ext.dart';
 
 abstract class BaseStatelessWidget extends StatelessWidget {
@@ -7,8 +8,10 @@ abstract class BaseStatelessWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final AppTheme? appTheme = Theme.of(context).extension<AppTheme>();
-    return buildWidget(context, appTheme);
+    final S appLocalization = S.of(context);
+    return buildWidget(context, appTheme, appLocalization);
   }
 
-  Widget buildWidget(BuildContext context, AppTheme? appTheme);
+  Widget buildWidget(
+      BuildContext context, AppTheme? appTheme, S appLocalization);
 }

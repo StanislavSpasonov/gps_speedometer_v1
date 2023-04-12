@@ -1,0 +1,16 @@
+{
+  "@@locale": "en",
+  "maxSpeed": "Max speed",
+  "averageSpeed": "Average Speed",
+  "tripMeter": "Trip Meter",
+  "tripTime": "Trip Time",
+  "Time": "Time",
+  "Reset": "Reset",
+  "HUD": "HUD",
+  "km_h": "km / h",
+  "settings": "Settings",
+  "saveChanges": "Save changes",
+  "russian": "Russian",
+  "english": "English",
+  "time": "Time"
+}
