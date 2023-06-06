@@ -6,7 +6,7 @@ import 'package:speedometer/scr/core/widgets/appbar_speedometr.dart';
 import 'package:speedometer/scr/core/widgets/base_state.dart';
 import 'package:speedometer/scr/core/widgets/buttons/big_black_button.dart';
 import 'package:speedometer/scr/feature/language_page/domain/locale_locale_change_notifier/locale_change_notifier.dart';
-import 'package:speedometer/scr/feature/language_page/widget/chose_language_widget.dart';
+import 'package:speedometer/scr/feature/language_page/presentation/widget/chose_language_widget.dart';
 
 class LanguagePage extends StatefulWidget {
   const LanguagePage({Key? key}) : super(key: key);
