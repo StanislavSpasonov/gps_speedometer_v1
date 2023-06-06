@@ -1,27 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:speedometer/generated/l10n.dart';
 import 'package:speedometer/scr/core/theme_ext/theme_ext.dart';
 import 'package:speedometer/scr/core/widgets/appbar_speedometr.dart';
 import 'package:speedometer/scr/core/widgets/base_less_widget.dart';
 import 'package:speedometer/scr/core/widgets/buttons/small_black_button.dart';
 import 'package:speedometer/scr/core/widgets/buttons/small_white_button.dart';
-import 'package:speedometer/scr/future/speedometer_page/widgets/column_element.dart';
+import 'package:speedometer/scr/feature/language_page/language_page.dart';
+import 'package:speedometer/scr/feature/speedometer_page/widgets/column_element.dart';
 
 class SpeedometerPage extends BaseStatelessWidget {
   const SpeedometerPage({Key? key}) : super(key: key);
 
   @override
-  Widget buildWidget(BuildContext context, AppTheme? appTheme) {
+  Widget buildWidget(
+      BuildContext context, AppTheme? appTheme, S appLocalization) {
     return Scaffold(
       backgroundColor: appTheme?.colors.black,
       appBar: AppBarSpeedometer(
         action: IconButton(
           onPressed: () {
-            // ignore: avoid_print
-            print('meun');
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const LanguagePage(),
+              ),
+            );
           },
           icon: SvgPicture.asset(appTheme?.svgImagePath.sandwichMenu ?? ''),
-          // icon: SvgPicture.asset(appTheme.),
         ),
       ),
       body: Padding(
@@ -39,49 +45,56 @@ class SpeedometerPage extends BaseStatelessWidget {
               style: appTheme?.fonts.aldrich140,
             ),
             Text(
-              'km/h',
+              S.of(context).km_h,
               style: appTheme?.fonts.aldrich20,
             ),
             const SizedBox(
               height: 48,
             ),
-            const ColumnElement(
-              title: 'Max speed',
+            ColumnElement(
+              title: appLocalization.maxSpeed,
               data: '135',
             ),
-            const ColumnElement(
-              title: 'Average Speed',
+            ColumnElement(
+              title: appLocalization.averageSpeed,
               data: '44',
             ),
-            const ColumnElement(
-              title: 'Trip Meter',
+            ColumnElement(
+              title: appLocalization.tripMeter,
               data: '230',
             ),
-            const ColumnElement(
-              title: 'Time',
+            ColumnElement(
+              title: appLocalization.tripTime,
+              data: '15:10:33',
+            ),
+            ColumnElement(
+              title: appLocalization.time,
               data: '15:10:33',
             ),
             const Spacer(),
             Row(
               children: [
-                SmallBlackButton(
-                  title: 'Reset',
-                  onPress: () {
-                    print('on Press reste');
-                  },
+                Expanded(
+                  child: SmallBlackButton(
+                    title: 'Reset',
+                    onPress: () {
+                      //todo add reset
+                    },
+                  ),
                 ),
                 const SizedBox(
                   width: 24.0,
                 ),
-                SmallWhiteButton(
-                  title: 'HUD',
-                  onPress: () {
-                    print('press HUD');
-                  },
+                Expanded(
+                  child: SmallWhiteButton(
+                    title: 'HUD',
+                    onPress: () {
+                      //todo add HUD Page
+                    },
+                  ),
                 ),
               ],
             ),
-
           ],
         ),
       ),

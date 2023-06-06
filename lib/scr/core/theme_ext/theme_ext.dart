@@ -50,5 +50,6 @@ class AppFonts {
 }
 
 class SvgIconsPath {
-  final sandwichMenu = 'graphics/menu.svg';
+  final sandwichMenu = 'graphics/svg/menu.svg';
+  final choseLanguage = 'graphics/svg/choose_language.svg';
 }
