@@ -5,7 +5,9 @@ import 'package:speedometer/scr/core/theme_ext/theme_ext.dart';
 import 'package:speedometer/scr/core/widgets/appbar_speedometr.dart';
 import 'package:speedometer/scr/core/widgets/base_state.dart';
 import 'package:speedometer/scr/core/widgets/buttons/big_black_button.dart';
+import 'package:speedometer/scr/feature/language_page/data/repository/language_repository_impl.dart';
 import 'package:speedometer/scr/feature/language_page/domain/locale_locale_change_notifier/locale_change_notifier.dart';
+import 'package:speedometer/scr/feature/language_page/domain/repository/language_repository.dart';
 import 'package:speedometer/scr/feature/language_page/presentation/widget/chose_language_widget.dart';
 
 class LanguagePage extends StatefulWidget {
@@ -14,6 +16,8 @@ class LanguagePage extends StatefulWidget {
   @override
   State<LanguagePage> createState() => _LanguagePageState();
 }
+
+final languageRepository = LanguageRepositoryImpl();
 
 class _LanguagePageState extends BaseState<LanguagePage> {
   int choseIndex = 0;
